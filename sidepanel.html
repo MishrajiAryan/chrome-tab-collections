@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections</title>
+    <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-left">
+            <button id="back-btn" class="back-btn" style="display: none;">←</button>
+            <div class="header-title" id="header-title">Collections</div>
+        </div>
+        <div class="header-menu">
+            <button class="menu-btn" id="menu-btn">⋯</button>
+            <div class="dropdown-menu" id="dropdown-menu">
+                <button class="dropdown-item" id="export-backup-btn">
+                    💾 Export Backup
+                </button>
+                <button class="dropdown-item" id="import-backup-btn">
+                    📁 Import Backup
+                </button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item" id="open-all-tabs">
+                    🗂️ Open all as tabs
+                </button>
+                <button class="dropdown-item" id="open-all-window">
+                    🪟 Open all in new window
+                </button>
+                <button class="dropdown-item" id="open-all-incognito">
+                    🕵️ Open all in incognito
+                </button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item" id="copy-all-links">
+                    📋 Copy all links
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden file input for import -->
+    <input type="file" id="file-input" class="hidden-file-input" accept=".json" />
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Collections View -->
+        <div id="collections-view">
+            <div class="create-collection">
+                <input type="text" id="new-collection-name" placeholder="Enter collection name">
+                <button id="add-collection-btn">Create</button>
+            </div>
+            
+            <div id="collections-list"></div>
+            
+            <div id="collections-empty" class="empty-state">
+                <h3>No collections yet</h3>
+                <p>Create your first collection to start organizing content</p>
+            </div>
+        </div>
+
+        <!-- Items View -->
+        <div id="items-view">
+            <!-- Clean Action Bar -->
+            <div class="action-bar">
+                <button class="add-current-btn" id="add-current-page-btn" title="Add current page">+</button>
+                <div class="drag-indicator">📎 Drag text, images, or links here</div>
+                <div id="drag-drop-zone" class="drag-drop-zone"></div>
+            </div>
+
+            <!-- Add Note -->
+            <div class="note-input">
+                <input type="text" id="new-note-input" placeholder="Add a note...">
+                <button id="add-note-btn">Add Note</button>
+            </div>
+
+            <div id="items-list"></div>
+            
+            <div id="items-empty" class="empty-state">
+                <h3>This collection is empty</h3>
+                <p>Add pages, images, text, or notes to get started</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        Designed & Built with ❤️ by <a href="https://www.linkedin.com/in/mishrajiaryan/" target="_blank">Aryan Mishra</a>
+    </div>
+
+    <!-- Confirmation Dialog -->
+    <div id="confirmation-dialog" class="confirmation-dialog hidden">
+        <div class="dialog-content">
+            <div id="dialog-title" class="dialog-title">Confirm Action</div>
+            <div id="dialog-message" class="dialog-message">Are you sure you want to proceed?</div>
+            <div class="dialog-actions">
+                <button id="dialog-cancel">Cancel</button>
+                <button id="dialog-confirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="sidepanel.js"></script>
+</body>
+</html>
